@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Tasks practical 1</title>
+</head>
+<body>
+
+  <script>
+    // Task 1: Variables and Data Types
+    var variableVar = "Hello";
+    let variableLet = 42;
+    const variableConst = true;
+
+    console.log("Task 1:");
+    console.log("var:", variableVar);
+    console.log("let:", variableLet);
+    console.log("const:", variableConst);
+
+    // Task 2: Operators and Expressions
+    function performOperations(num1, num2) {
+      const sum = num1 + num2;
+      const difference = num1 - num2;
+      const product = num1 * num2;
+      const quotient = num1 / num2;
+
+      console.log("\nTask 2:");
+      console.log("Sum:", sum);
+      console.log("Difference:", difference);
+      console.log("Product:", product);
+      console.log("Quotient:", quotient);
+    }
+
+    performOperations(10, 5);
+
+    // Task 3: Control Flow
+    function checkAge(age) {
+      console.log("\nTask 3:");
+      if (age < 18) {
+        console.log("You are a minor.");
+      } else if (age >= 18 && age <= 65) {
+        console.log("You are an adult.");
+      } else {
+        console.log("You are a senior citizen.");
+      }
+    }
+
+    checkAge(25);
+
+    // Task 4: Functions
+    function findMinMaxSalary(salaries) {
+      console.log("\nTask 4:");
+      const minSalary = Math.min(...salaries);
+      const maxSalary = Math.max(...salaries);
+      console.log("Min Salary:", minSalary);
+      console.log("Max Salary:", maxSalary);
+    }
+
+    findMinMaxSalary([50000, 75000, 60000, 90000]);
+
+    // Task 5: Arrays and Objects
+    function displayBooks(books) {
+      console.log("\nTask 5:");
+      books.forEach(book => console.log(book));
+    }
+
+    const favoriteBooks = ["Book 1", "Book 2", "Book 3"];
+    displayBooks(favoriteBooks);
+
+    // Task 6: Scope and Hoisting
+    function scopeTest() {
+      var localVar = "I am a local variable.";
+    }
+
+    scopeTest();
+    // Uncommenting the line below will result in an error since localVar is not defined in this scope.
+    // console.log(localVar);
+
+    // Task 7: DOM Manipulation
+    const button = document.createElement("button");
+    button.textContent = "Click me!";
+    document.body.appendChild(button);
+
+    button.addEventListener("click", () => {
+      button.textContent = "Button Clicked!";
+    });
+
+    // Task 8: Error Handling
+    function checkNegativeNumber(num) {
+      if (num < 0) {
+        throw new Error("Number cannot be negative.");
+      } else {
+        console.log("\nTask 8:");
+        console.log("Number is:", num);
+      }
+    }
+
+    try {
+      checkNegativeNumber(10);
+      checkNegativeNumber(-5);
+    } catch (error) {
+      console.error(error.message);
+    }
+
+    // Task 9: Asynchronous JavaScript
+    function simulateAsyncOperation(callback) {
+      setTimeout(() => {
+        const result = "Async operation completed!";
+        callback(result);
+      }, 2000);
+    }
+
+    console.log("\nTask 9:");
+    simulateAsyncOperation(result => console.log(result));
+
+  </script>
+</body>
+</html>
